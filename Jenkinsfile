@@ -4,7 +4,7 @@ pipeline {
         go 'Go'
     }
     environment {
-        GO111MODULES=on
+        GO111MODULES="on"
     }
 	stages {
 		stage ('checkout') {

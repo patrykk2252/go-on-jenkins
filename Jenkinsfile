@@ -1,5 +1,11 @@
 pipeline {
-	agent { any }
+	agent any
+    tools {
+        go 'go'
+    }
+    environment {
+        GO111MODULES=on
+    }
 	stages {
 		stage ('checkout') {
 			steps {
@@ -8,7 +14,8 @@ pipeline {
 		}
         stage('Compile Go') {
             steps {       
-                echo 'GO project'                                                      
+                echo 'GO project'   
+                sh 'go build'                                                   
 
             }
         }
